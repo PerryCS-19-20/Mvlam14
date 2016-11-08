@@ -11,8 +11,9 @@
 	.links:hover {
 	  color: #FFFFFF;
 	}
-	a:hover {
+	.navtext:hover {
     color: #000000;
+}
 
 	
 
