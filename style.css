@@ -71,7 +71,7 @@
 	footer  div  nav  ul {
 	  list-style-type: none;
 	  margin: 0;
-	  position: relative;
+	  position: fixed;
 	  top: 40px;
 	  left: 0;
 	  bottom: 0;
