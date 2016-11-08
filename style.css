@@ -1,15 +1,15 @@
 .header {
 	  margin-top: 35px;
 	  margin-bottom: 20px;
-	  color: purple;
+	  color: #5f2f91;
 	  font-size: 50px;
 	}
-	.wrapper {
+	.bruh {
       width: 960px
 	  margin: 0 auto;
 	}
 	.links:hover {
-	  color: white;
+	  color: #FFFFFF;
 	}
 	
 
@@ -28,7 +28,7 @@
 	  top: 0px;
       right: 0px;
 	  left: 0px;
-	  background-color: purple;
+	  background-color: #5f2f91;
 	}
 	
 	header  div  nav  ul {
@@ -41,7 +41,7 @@
 	
 	header  div  nav  ul  li  .navtext {
 	  font-size: 35px;
-	  color: white;
+	  color: #FFFFFF;
 	  text-align: center;
 	  padding: 25px 30px;
 	  text-decoration: none;
@@ -52,12 +52,12 @@
 	}
 	
 	header  div  nav  ul  li  a:hover {
-	  background-color: white;
+	  background-color: #FFFFFF;
 	}
 	
 	header  div  nav  ul  li  .active {
-	  background-color: white;
-      color: black;	 
+	  background-color: #FFFFFF;
+      color: #000000;	 
       font-size: 35px;	
 	  padding: 25px 30px;
 	  text-decoration: none;	  
@@ -74,7 +74,7 @@
 	  right: 0;
 	  padding: 15px 0px 15px 0px;
 	  overflow: hidden;
-	  background-color: purple;
+	  background-color: #5f2f91;
 	  width: 100%;
 	}
 	
@@ -88,7 +88,7 @@
 	
 	footer  div  nav  ul  li  a {
 	  font-size: 16px;
-	  color: white;
+	  color: #FFFFFF;
 	  text-align: center;
 	  padding: 16px 16px 16px 16px;
 	  text-decoration: none;
@@ -99,5 +99,5 @@
 	}
 	
 	footer  div  nav  ul  li  a:hover {
-	  color: white;
+	  color: #FFFFFF;
 	}
