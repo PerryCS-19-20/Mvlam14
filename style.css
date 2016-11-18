@@ -20,7 +20,7 @@
 	.navtext:hover {
     color: #000000;
     }
-    body {
+    .bodyStyle {
         background-color: white;
         color: black;
     }

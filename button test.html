@@ -1,11 +1,58 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>bruh</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="/chs.js"></script>
-        <script>
-/* Constants for bricks */
+<head>
+<title>Breakout</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://static.codehs.com/gulp/cb01b4a22ffd3971572a8a1ab9f3b7c4cb17f383/chs-js-lib/chs.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<div class="topHeader">
+</div>
+
+<style>
+canvas {
+    border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<div id="canvasContainer" width="100%" style="width: 100%; height: 100%; overflow: hidden;">
+<canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+</div>
+
+<header>
+<div class="bruh">
+<nav>
+<img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> HOME</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
+<li><a class="active"> BREAKOUT</a></li>
+</ul>
+</nav>
+</div>
+</header>
+    <p id="ARC"><button class="topHeader" onclick="run();">Begin</button>
+    <button onclick="">Restart</button></p>
+    <p id="MTV"><button onclick="dab();">Difficulty</button></p>
+    
+<footer>
+<div class="bruh">
+<nav>
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> HOME</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
+<li><a class="active"> BREAKOUT</a></li>
+</ul>
+</nav>
+</div>
+</footer> 
+
+<script>
+    
+ function run() {
+    /* Constants for bricks */
 var NUM_ROWS = 8;
 var BRICK_TOP_OFFSET = 10;
 var BRICK_SPACING = 2;
@@ -15,7 +62,7 @@ var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
 var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
 
 /* Constants for ball and paddle */
-var PADDLE_WIDTH =80;
+var PADDLE_WIDTH = 80;
 var PADDLE_HEIGHT = 15;
 var PADDLE_OFFSET = 10;
 var paddle;
@@ -24,10 +71,10 @@ var BALL_RADIUS = 15;
 var ball;
 var dx = 4;
 var dy = 4;
-var counter = 80;
+var counter = 77;
 var winText = new Text("You Win!", "30pt Times New Roman");
 var loseText = new Text("Hold this L!", "30pt Times New Roman");
-var frog = new WebImage("rainbowfrog.gif");
+var frog = new WebImage("bruhfrog.gif");
 
 function start(){
     bricks();
@@ -125,25 +172,23 @@ function bounce() {
         add(loseText);
     }
     
-}	
-document.getElementById("ARC").innerHTML = start;
- </script>
-    </head>
-    <body>
-        
-        
-        <p id="ARC"><button onclick="start();">Begin</button></p>  
-        
-        
-        <div id="canvasContainer" width="100%" style="width: 100%; height: 100%; overflow: hidden;">
-<canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
-</div>
-<script>
-window.onload = function() {
+}		
+    
 if (typeof start === 'function') {
         start();
     }
 };
+//function restart(){
+    
+//}
+function dab(){
+    var A = <button onclick="momMode();">Momma Mode</button>;
+    var B = <button onclick="hard();">Hard</button>;
+    var C = <button onclick="insane();">Insane</button>;
+    document.getElementById("MTV").innerHTML= A + B + C;
+    
+}
 </script>
-    </body>
+</body>
 </html>
+
