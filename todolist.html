@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.center {
+text-align:center;
+margin:30px;
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="bruh">
+<nav>
+<img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> HOME</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">BREAKOUT</a></li>
+<li><a class="active" href="https://perryma.tk/Mvlam14/todolist.html">DATABASE</a></li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="center">
+<h1 class="style"><u>Database</u></h1>
+
+
+First Name - <input id="firstname">
+<br><br>
+Last Name - <input id="lastname">
+<br><br>
+Birthday - <input type="date" id="birthday">
+<br><br>
+Line # - <input id="line">
+<br><br>
+<button type="button" onclick="up();">Move Up</button>
+<button type="button" onclick="down();">Move Down</button>
+<button type="button" onclick="destroyAll();">Clear Database</button>
+<br><br>
+<button type="button" onclick="create();">Create Entry</button>
+<button type="button" onclick="bye();">Delete Entry</button>
+
+<p id="done"></p>
+<p id="ARC"></p>
+<p id="dbg"></p>
+</div>
+  
+<footer>
+<div class="bruh">
+<nav>
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> HOME</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">BREAKOUT</a></li>
+<li><a class="active" href="https://perryma.tk/Mvlam14/todolist.html">DATABASE</a></li>
+</ul>
+</nav>
+</div>
+</footer> 
+   
+<script>
+var bruh = new Array;
+//create function
+function create() {
+
+//document.getElementById("dbg").innerHTML = "aaaa";
+fName = document.getElementById("firstname").value;
+lName = document.getElementById("lastname").value;
+bDay = document.getElementById("birthday").value;
+//document.getElementById("dbg").innerHTML = "bbbb";
+entry = {fn:fName,ln:lName,bd:bDay}; 
+//document.getElementById("dbg").innerHTML = "cccc";
+bruh[bruh.length] = entry;
+
+refresh();
+document.getElementById("done").innerHTML = "Entry Added!";
+}
+
+//refresh function
+function refresh() {
+var fruits, text, fLen, i;
+
+fruits = bruh;
+fLen = bruh.length;
+text = "<ol>";
+for (i = 0; i < fLen; i++) {
+    text += "<li>" + bruh[i].fn + " " + bruh[i].ln + " " + bruh[i].bd + " " + "</li>";
+}
+text += "</ol>";
+
+document.getElementById("ARC").innerHTML = text;
+//document.getElementById("dbg").innerHTML = "aaaa";
+}
+
+//ClearAll database
+function destroyAll() {
+bruh = [];
+refresh(); 
+document.getElementById("done").innerHTML = "Database Cleared!";
+}
+
+//delete function
+function bye() {
+lineNumber = Number(document.getElementById("line").value) - 1;
+bruh.splice(lineNumber,1);
+refresh();
+document.getElementById("done").innerHTML = "Enrty Deleted!";
+}
+//Move Up
+function up() {
+lineNumber = Number(document.getElementById("line").value) - 1;
+temp = bruh[lineNumber];
+bruh[lineNumber] = bruh[lineNumber -1];
+bruh[lineNumber - 1] = temp;
+
+refresh();
+document.getElementById("done").innerHTML = "Entry Moved Up!";
+}
+//Move down
+function down() {
+lineNumber = Number(document.getElementById("line").value) - 1;
+temp = bruh[lineNumber];
+bruh[lineNumber] = bruh[lineNumber +1];
+bruh[lineNumber + 1] = temp;
+
+refresh();
+document.getElementById("done").innerHTML = "Entry Moved Down!";
+}
+</script>                                                              
+</body>                                   
+</html>
