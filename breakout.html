@@ -28,11 +28,14 @@ canvas {
 <li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
 <li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
 <li><a class="active"> BREAKOUT</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/todolist.html">DATABASE</a></li>
 </ul>
 </nav>
 </div>
 </header>
-  
+    <p id="ARC"><button onclick="run();">Begin</button>
+    
+    
 <footer>
 <div class="bruh">
 <nav>
@@ -41,16 +44,15 @@ canvas {
 <li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> ABOUT ME </a></li>
 <li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> EPILEPSY </a></li>
 <li><a class="active"> BREAKOUT</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/todolist.html">DATABASE</a></li>
 </ul>
 </nav>
 </div>
 </footer> 
-<script>
-
-</script>
 
 <script>
-window.onload = function() {
+    
+ function run() {
     /* Constants for bricks */
 var NUM_ROWS = 8;
 var BRICK_TOP_OFFSET = 10;
@@ -68,9 +70,9 @@ var paddle;
 
 var BALL_RADIUS = 15;
 var ball;
-var dx = 7;
-var dy = 7;
-var counter = 40;
+var dx = 4;
+var dy = 4;
+var counter = 77;
 var winText = new Text("You Win!", "30pt Times New Roman");
 var loseText = new Text("Hold this L!", "30pt Times New Roman");
 var frog = new WebImage("bruhfrog.gif");
@@ -177,7 +179,7 @@ if (typeof start === 'function') {
         start();
     }
 };
+
 </script>
 </body>
 </html>
-
