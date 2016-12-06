@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Times Table 
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <style>
+            table, td, th {
+                border: solid 1px;
+                border-color: lime;
+            }
+            td {
+                text-align: right;
+            }
+        </style>
+    </head>
+    
+    <body onload="buildTimesTables();">
+<header>
+<div class="bruh">
+<nav>
+<img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
+</ul>
+</nav>
+</div>
+</header>
+        <div class="topHeader">
+        <h1><Multiplication Table</h1>
+        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10"
+        onchange="buildTimesTable();"><br>
+        
+        <script>
+            function buildTimesTable () {
+                var timesTable = document.getElementById("timesTable");
+                if(timesTable != null) {
+                    timesTable.parentNode.removeChild(timesTable);
+                }
+                timesTable= document.createElement("table");
+                timesTable.id = "timesTable";
+                
+                var body = document.body;
+                body.appendChild(timesTable);
+                
+                var width = document.getElementById("tableWidth").value;
+                
+                
+            }
+        </script>
+        </div>
+<footer>
+<div class="bruh">
+<nav>
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
+</ul>
+</nav>
+</div>
+</footer> 
+    </body>
+</html>
