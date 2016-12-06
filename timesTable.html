@@ -2,14 +2,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Times Table 
-        </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width">
+        
+        <title>Times Table </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
         <style>
             table, td, th {
                 border: solid 1px;
-                border-color: lime;
+                
             }
             td {
                 text-align: right;
@@ -17,7 +17,7 @@
         </style>
     </head>
     
-    <body onload="buildTimesTables();">
+    <body onload="buildTimesTable();">
 <header>
 <div class="bruh">
 <nav>
@@ -33,25 +33,35 @@
 </div>
 </header>
         <div class="topHeader">
-        <h1><Multiplication Table</h1>
-        Table Width:<input type="range" id="tableWidth" min="1" max="20" value="10"
-        onchange="buildTimesTable();"><br>
+        <h1>Multiplication Table</h1>
+        
         
         <script>
             function buildTimesTable () {
-                var timesTable = document.getElementById("timesTable");
-                if(timesTable != null) {
-                    timesTable.parentNode.removeChild(timesTable);
-                }
-                timesTable= document.createElement("table");
-                timesTable.id = "timesTable";
+                 var timesTable = document.createElement("table");
+                      timesTable.id = "timesTable";
+                      var body = document.body;
+                      body.appendChild(timesTable);
                 
-                var body = document.body;
-                body.appendChild(timesTable);
+                 for(var i=1; i < 11; i++) {
+                          var row = document.createElement("tr");
+                         
+                            for(var m=1; m < 11; m++) {
+                                var column = document.createElement("td");
+                                timesTable.appendChild(row);
+                                row.appendChild(column);
+                                column.textContent= i * m;
+                           if (m % 3 === 0 && 1 && 2 && 3) {
+                               column.style.backgroundColor="purple";
+                               column.style.color="white";
+                           }
+                           if (i % 3 === 0 && 1 && 2 && 3) {
+                               row.style.backgroundColor="purple";
+                               row.style.color="white";
+                           }    
                 
-                var width = document.getElementById("tableWidth").value;
-                
-                
+                        }
+                    }
             }
         </script>
         </div>
