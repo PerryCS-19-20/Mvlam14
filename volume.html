@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Volume</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="script.js"></script>
+<script>
+    function calc() {
+        var L = parseFloat(document.getElementById("length").value);
+        var W = parseFloat(document.getElementById("width").value);
+        var H = parseFloat(document.getElementById("height").value);
+        var vol = document.getElementById("vol");
+
+
+        var area = L * W;          
+        vol.value = area * H;   
+    }
+</script>
+ <style>
+input[type=number] {
+    width: 64px;
+}
+</style>
+</head>
+
+<body>
+<header>
+<div class="bruh">
+<nav>
+<img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
+</ul>
+</nav>
+</div>
+</header>
+    
+    
+<div class="topHeader">
+<h1>Volume of a Rectangular Prism</h1>
+<img  src="rectangular_solid_1.gif"><hr><br>
+Length: <input type="number" id="length" placeholder="length"><br><br>
+Width: <input type="number" id="width" placeholder="width"><br><br>
+Height: <input type="number" id="height" placeholder="height">
+<button onclick="calc();">Calculate</button>
+<hr><br>
+Volume: <input type="output" id="vol" placeholder="volume" readonly>
+   
+</div>
+<footer>
+<div class="bruh">
+<nav>
+<ul>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
+<li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
+</ul>
+</nav>
+</div>
+</footer> 
+        
+</body>
+</html>
