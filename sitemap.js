@@ -4,8 +4,7 @@ function buildMap(elementId){
     var sublist=document.createElement("ul");
     var classStuff = document.createElement("li");
     classStuff.textContent="Class Stuff";
-    var epilepsy = document.createElement("li");
-    epilepsy.textContent="Epilepsy";
+   
     
     list.appendChild(buildList("Home", "index.html"));
     theMap.appendChild(list);
@@ -13,11 +12,11 @@ function buildMap(elementId){
     list.appendChild(buildList("About Me", "about_me.html"));
     theMap.appendChild(list);
     
-    list.appendChild(epilepsy);
+    list.appendChild(buildList("Epilepsy", "im_feeling_lucky"));
     theMap.appendChild(list);
     
-    sublist.appendChild(buildList("surprise", "suprise.html"));
-    epilepsy.appendChild(sublist);
+    sublist.appendChild(buildList("Surprise", "suprise.html"));
+    classStuff.appendChild(sublist);
     
     list.appendChild(buildList("Breakout", "breakout.html"));
     theMap.appendChild(list);
