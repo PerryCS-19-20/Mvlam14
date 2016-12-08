@@ -10,7 +10,7 @@
 
 <style>
 canvas {
-    border: 1px solid black;
+    border: 1px solid purple;
 }
 </style>
 </head>
@@ -149,16 +149,42 @@ function paddleCheck(e) {
 }
 function bounce() {
     var elem = getElementAt(ball.getX(), ball.getY()+BALL_RADIUS);
-    if(elem == paddle) {
+    if(elem ===
+            
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                paddle) {
         dy = -Math.abs(dy);
     }else {
-        if(elem != null){
+        if(elem !== null){
             remove(elem);
             dy = -dy;
         }
     }
     var elem2 = getElementAt(ball.getX(), ball.getY()-BALL_RADIUS);
-    if(elem2 != null && elem2 != paddle) {
+    if(elem2 !== null && elem2 !== paddle) {
         dy = -dy;
         remove(elem2);
         counter = counter - 1;
