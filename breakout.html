@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <title>Breakout</title>
@@ -84,7 +84,7 @@ var BALL_RADIUS = 15;
 var ball;
 var dx = 4;
 var dy = 4;
-var counter = 77;
+var counter = 80;
 var winText = new Text("You Win!", "30pt Times New Roman");
 var loseText = new Text("Hold this L!", "30pt Times New Roman");
 var frog = new WebImage("bruhfrog.gif");
@@ -161,38 +161,17 @@ function paddleCheck(e) {
 }
 function bounce() {
     var elem = getElementAt(ball.getX(), ball.getY()+BALL_RADIUS);
-    if(elem ===
-            
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                paddle) {
+    if(elem === paddle) {
         dy = -Math.abs(dy);
     }else {
         if(elem !== null){
             remove(elem);
             dy = -dy;
+            counter = counter - 1;
+            if(counter <= 0){
+                add(winText);
+                add(frog);
+                stopTimer(draw);
         }
     }
     var elem2 = getElementAt(ball.getX(), ball.getY()-BALL_RADIUS);
@@ -217,7 +196,7 @@ if (typeof start === 'function') {
         start();
     }
 };
-
+ }
 </script>
 </body>
 </html>
