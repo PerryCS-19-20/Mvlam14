@@ -1,188 +1,192 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Breakout</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script type="text/javascript" src="https://static.codehs.com/gulp/cb01b4a22ffd3971572a8a1ab9f3b7c4cb17f383/chs-js-lib/chs.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-<div class="topHeader">
-</div>
+    <head>
+        <title>Breakout</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script type="text/javascript" src="https://static.codehs.com/gulp/cb01b4a22ffd3971572a8a1ab9f3b7c4cb17f383/chs-js-lib/chs.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    <div class="topHeader">
+    </div>
 
-<style>
-canvas {
-    border: 1px solid purple;
-}
-</style>
+    <style>
+        canvas {
+            border: 1px solid purple;
+        }
+    </style>
 </head>
 <body>
-<div id="canvasContainer" width="100%" style="width: 100%; height: 100%; overflow: hidden;">
-<canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
-</div>
+    <div id="canvasContainer" width="100%" style="width: 100%; height: 100%; overflow: hidden;">
+        <canvas width="400" height="500" class="codehs-editor-canvas"></canvas>
+    </div>
 
-<header>
-<div class="bruh">
-<nav>
-<img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
-<ul>
-<li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
-<li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
-<li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
-<li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
-<div class="dropdown">
-<li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
-<div class="dropdown-content">
-<a href="https://perryma.tk/Mvlam14/todolist.html">To Do List</a>
-<a href="https://perryma.tk/Mvlam14/chalkboard.html">Chalkboard</a>
-<a href="https://perryma.tk/Mvlam14/HTMLtest.html">HTML test</a>
-<a href="https://perryma.tk/Mvlam14/changingElements.html">Events</a>
-<a href="https://perryma.tk/Mvlam14/tictactoe.html">Tic Tac Toe</a>
-<a href="https://perryma.tk/Mvlam14/timesTable.html">Times Table</a>
-<a href="https://perryma.tk/Mvlam14/timesTable2.html">Times Table Mk 2</a>
-<a href="https://perryma.tk/Mvlam14/volume.html">Volume</a>
-</div>
-</div>
-</ul>
-</nav>
-</div>
-</header>
+    <header>
+        <div class="bruh">
+            <nav>
+                <img id="navlogo" src="bruhfrog.gif" width="50px" height="50px;">
+                <ul>
+                    <li><a class="navtext" href="https://perryma.tk/Mvlam14/index.html"> Home</a></li>
+                    <li><a class="navtext" href="https://perryma.tk/Mvlam14/about_me.html"> About Me </a></li>
+                    <li><a class="navtext" href="https://perryma.tk/Mvlam14/im_feeling_lucky.html"> Epilepsy </a></li>
+                    <li><a class="navtext" href="https://perryma.tk/Mvlam14/breakout.html">Breakout</a></li>
+                    <div class="dropdown">
+                        <li><a class="navtext" href="https://perryma.tk/Mvlam14/ClassStuff.html">ClassStuff</a></li>
+                        <div class="dropdown-content">
+                            <a href="https://perryma.tk/Mvlam14/todolist.html">To Do List</a>
+                            <a href="https://perryma.tk/Mvlam14/chalkboard.html">Chalkboard</a>
+                            <a href="https://perryma.tk/Mvlam14/HTMLtest.html">HTML test</a>
+                            <a href="https://perryma.tk/Mvlam14/changingElements.html">Events</a>
+                            <a href="https://perryma.tk/Mvlam14/tictactoe.html">Tic Tac Toe</a>
+                            <a href="https://perryma.tk/Mvlam14/timesTable.html">Times Table</a>
+                            <a href="https://perryma.tk/Mvlam14/timesTable2.html">Times Table Mk 2</a>
+                            <a href="https://perryma.tk/Mvlam14/volume.html">Volume</a>
+                        </div>
+                    </div>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <p id="ARC"><button onclick="run();">Begin</button>
-    
-    
-<script>
-    
- function run() {
-    /* Constants for bricks */
-var NUM_ROWS = 8;
-var BRICK_TOP_OFFSET = 10;
-var BRICK_SPACING = 2;
-var NUM_BRICKS_PER_ROW = 10;
-var BRICK_HEIGHT = 10;
-var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
-var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
 
-/* Constants for ball and paddle */
-var PADDLE_WIDTH = 80;
-var PADDLE_HEIGHT = 15;
-var PADDLE_OFFSET = 10;
-var paddle;
 
-var BALL_RADIUS = 15;
-var ball;
-var dx = 4;
-var dy = 4;
-var counter = 80;
-var winText = new Text("You Win!", "30pt Times New Roman");
-var loseText = new Text("Hold this L!", "30pt Times New Roman");
-var frog = new WebImage("bruhfrog.gif");
+        <script>
 
-function start(){
-    bricks();
-    ball();
-    paddle();
-    mouseMoveMethod(paddleCheck);
-    winText.setPosition(getWidth()/3, getHeight()/2);
-    loseText.setPosition(getWidth()/3, getHeight()/2);
-    frog.setSize(150, 150);
-    frog.setPosition(getWidth()/2, getHeight()* 3/4);
-}
-function bricks() {
-    for(var m = 0; m < NUM_ROWS; m++){
-        for(var i = 0; i < NUM_BRICKS_PER_ROW; i++){
-            var brick = new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
-            brick.setPosition(i * (BRICK_WIDTH + BRICK_SPACING)+ BRICK_SPACING, m *(BRICK_HEIGHT + BRICK_SPACING)+ BRICK_TOP_OFFSET);
-            brick.setColor(Randomizer.nextColor());
-            
-            /*if(m == 0|| m==1){
-                brick.setColor(Color.red);
-            }else if(m == 2|| m==3){
-                brick.setColor(Color.orange);
-            }else if(m == 4|| m==5){
-                brick.setColor(Color.green);
-            }else if(m == 6|| m==7){
-                brick.setColor(Color.blue);
-            }*/
-            add(brick);
-        }
-    
-    }
-    
-}
-function ball() {
-  ball = new Circle(BALL_RADIUS);
-	ball.setPosition(getWidth()/2, getHeight()/2);
-	add(ball);
-	
-	setTimer(draw, 20);  
-}
-function draw(){
-	checkWalls();
-	ball.move(dx, dy);
-	bounce();
-}
-function checkWalls(){
-	// Bounce off right wall
-	if(ball.getX() + ball.getRadius() > getWidth()){
-		dx = -dx;
-	}
-	
-	// Bounce off left wall
-	if(ball.getX() - ball.getRadius() < 0){
-		dx = -dx;
-	}
-	// Bounce off top wall
-	if(ball.getY() - ball.getRadius() < 0){
-		dy = -dy;
-	}
-}
-function paddle(e) {
-    paddle = new Rectangle(PADDLE_WIDTH, PADDLE_HEIGHT);
-    paddle.setPosition(getWidth()/2, getHeight()- 35);
-    add(paddle);
-}
+        function run() {
+            /* Constants for bricks */
+            var NUM_ROWS = 8;
+            var BRICK_TOP_OFFSET = 10;
+            var BRICK_SPACING = 2;
+            var NUM_BRICKS_PER_ROW = 10;
+            var BRICK_HEIGHT = 10;
+            var SPACE_FOR_BRICKS = getWidth() - (NUM_BRICKS_PER_ROW + 1) * BRICK_SPACING;
+            var BRICK_WIDTH = SPACE_FOR_BRICKS / NUM_BRICKS_PER_ROW;
 
-function paddleCheck(e) {
-    if(e.getX() <= getWidth()- PADDLE_WIDTH/2 && e.getX() >PADDLE_WIDTH/2) {
-        paddle.setPosition(e.getX()- PADDLE_WIDTH/2, paddle.getY());
-    }
-}
-function bounce() {
-    var elem = getElementAt(ball.getX(), ball.getY()+BALL_RADIUS);
-    if(elem === paddle) {
-        dy = -Math.abs(dy);
-    }else {
-        if(elem !== null){
-            remove(elem);
-            dy = -dy;
-            counter = counter - 1;
-            if(counter <= 0){
+            /* Constants for ball and paddle */
+            var PADDLE_WIDTH = 80;
+            var PADDLE_HEIGHT = 15;
+            var PADDLE_OFFSET = 10;
+            var paddle;
+
+            var BALL_RADIUS = 15;
+            var ball;
+            var dx = 4;
+            var dy = 4;
+            var counter = 80;
+            var winText = new Text("You Win!", "30pt Times New Roman");
+            var loseText = new Text("Hold this L!", "30pt Times New Roman");
+            var frog = new WebImage("bruhfrog.gif");
+
+            function start() {
+                bricks();
+                ball();
+                paddle();
+                mouseMoveMethod(paddleCheck);
+                winText.setPosition(getWidth() / 3, getHeight() / 2);
+                loseText.setPosition(getWidth() / 3, getHeight() / 2);
+                frog.setSize(150, 150);
+                frog.setPosition(getWidth() / 2, getHeight() * 3 / 4);
+            }
+            function bricks() {
+                for (var m = 0; m < NUM_ROWS; m++) {
+                    for (var i = 0; i < NUM_BRICKS_PER_ROW; i++) {
+                        var brick = new Rectangle(BRICK_WIDTH, BRICK_HEIGHT);
+                        brick.setPosition(i * (BRICK_WIDTH + BRICK_SPACING) + BRICK_SPACING, m * (BRICK_HEIGHT + BRICK_SPACING) + BRICK_TOP_OFFSET);
+                        brick.setColor(Randomizer.nextColor());
+
+                        /*if(m == 0|| m==1){
+                         brick.setColor(Color.red);
+                         }else if(m == 2|| m==3){
+                         brick.setColor(Color.orange);
+                         }else if(m == 4|| m==5){
+                         brick.setColor(Color.green);
+                         }else if(m == 6|| m==7){
+                         brick.setColor(Color.blue);
+                         }*/
+                        add(brick);
+                    }
+
+                }
+
+            }
+            function ball() {
+                ball = new Circle(BALL_RADIUS);
+                ball.setPosition(getWidth() / 2, getHeight() / 2);
+                add(ball);
+
+                setTimer(draw, 20);
+            }
+            function draw() {
+                checkWalls();
+                ball.move(dx, dy);
+                bounce();
+            }
+            function checkWalls() {
+                // Bounce off right wall
+                if (ball.getX() + ball.getRadius() > getWidth()) {
+                    dx = -dx;
+                }
+
+                // Bounce off left wall
+                if (ball.getX() - ball.getRadius() < 0) {
+                    dx = -dx;
+                }
+                // Bounce off top wall
+                if (ball.getY() - ball.getRadius() < 0) {
+                    dy = -dy;
+                }
+            }
+            function paddle(e) {
+                paddle = new Rectangle(PADDLE_WIDTH, PADDLE_HEIGHT);
+                paddle.setPosition(getWidth() / 2, getHeight() - 35);
+                add(paddle);
+            }
+
+            function paddleCheck(e) {
+                if (e.getX() <= getWidth() - PADDLE_WIDTH / 2 && e.getX() > PADDLE_WIDTH / 2) {
+                    paddle.setPosition(e.getX() - PADDLE_WIDTH / 2, paddle.getY());
+                }
+            }
+            function bounce() {
+                var elem = getElementAt(ball.getX(), ball.getY() + BALL_RADIUS);
+                if (elem === paddle) {
+                    dy = -Math.abs(dy);
+                } else {
+                    if (elem !== null) {
+                        remove(elem);
+                        dy = -dy;
+                        counter = counter - 1;
+                        if (counter <= 0) {
+                            win();
+                        }
+                    }
+                }
+                var elem2 = getElementAt(ball.getX(), ball.getY() - BALL_RADIUS);
+                if (elem2 !== null && elem2 !== paddle) {
+                    dy = -dy;
+                    remove(elem2);
+                    counter = counter - 1;
+                    if (counter <= 0) {
+                        win();
+                    }
+                }
+
+                if (ball.getX(), ball.getY() + BALL_RADIUS >= getHeight()) {
+                    stopTimer(draw);
+                    add(loseText);
+                }
+
+            }
+            function win() {
                 add(winText);
                 add(frog);
                 stopTimer(draw);
+            }
+
+            if (typeof start === 'function') {
+                start();
+            }
         }
-    }
-    var elem2 = getElementAt(ball.getX(), ball.getY()-BALL_RADIUS);
-    if(elem2 !== null && elem2 !== paddle) {
-        dy = -dy;
-        remove(elem2);
-        counter = counter - 1;
-        if(counter <= 0){
-            add(winText);
-            add(frog);
-            stopTimer(draw);
-        }
-    }
-    if(ball.getX(), ball.getY()+BALL_RADIUS >= getHeight()) {
-        stopTimer(draw);
-        add(loseText);
-    }
-    
-}		
-    
-if (typeof start === 'function') {
-        start();
-    }
-};
- }
-</script>
+        
+
+        </script>
 </body>
 </html>
